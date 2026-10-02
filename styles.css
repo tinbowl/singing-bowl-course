@@ -431,7 +431,7 @@ h3 {
 
 .register {
   display: block;
-  padding-bottom: 110px;
+  padding-bottom: 56px;
 }
 
 .register-copy {
@@ -448,7 +448,7 @@ h3 {
 .form-embed iframe {
   display: block;
   width: 100%;
-  height: 1200px;
+  height: 1440px;
   border: 0;
   background: transparent;
 }
@@ -510,7 +510,7 @@ h3 {
   }
 
   .register {
-    padding-bottom: 72px;
+    padding-bottom: 32px;
   }
 
   .register-copy {
@@ -518,7 +518,7 @@ h3 {
   }
 
   .form-embed iframe {
-    height: 1250px;
+    height: 1450px;
   }
 }
 
