@@ -1,0 +1,550 @@
+:root {
+  --ink: #22302a;
+  --muted: #68746b;
+  --deep: #1e352c;
+  --deep-2: #0f211b;
+  --cream: #f8f2e6;
+  --paper: #efe6d4;
+  --line: rgba(38, 55, 47, 0.16);
+  --gold: #b99752;
+  --gold-soft: #dcc58f;
+  --moss: #6d7a37;
+  --stone: #cfd4c5;
+  --water: #dbe7e4;
+  --white: #fffdf6;
+  --shadow: 0 30px 90px rgba(15, 33, 27, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 16% 4%, rgba(185, 151, 82, 0.24), transparent 32rem),
+    radial-gradient(circle at 84% 8%, rgba(109, 122, 55, 0.18), transparent 30rem),
+    linear-gradient(180deg, #f8f2e6 0%, #e9eadc 48%, #dfe8e3 100%);
+  font-family: "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.75;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 24px clamp(20px, 5vw, 72px) 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto -10% 5% 48%;
+  height: 360px;
+  background: radial-gradient(circle, rgba(30, 53, 44, 0.16), transparent 66%);
+  pointer-events: none;
+}
+
+.nav {
+  width: min(1160px, 100%);
+  margin: 0 auto 62px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 3vw, 28px);
+  color: var(--muted);
+  font-size: 0.96rem;
+  font-weight: 700;
+}
+
+.nav-links a:hover {
+  color: var(--deep);
+}
+
+.hero-grid {
+  width: min(1160px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.78fr);
+  align-items: center;
+  gap: clamp(28px, 6vw, 72px);
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow,
+.section-kicker {
+  margin: 0 0 14px;
+  color: var(--gold);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  font-size: 0.86rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "Noto Serif TC", serif;
+  line-height: 1.22;
+  color: var(--deep-2);
+}
+
+h1 {
+  max-width: 720px;
+  font-size: clamp(2.9rem, 7vw, 5.8rem);
+  letter-spacing: 0;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+}
+
+h3 {
+  font-size: 1.35rem;
+}
+
+.lead {
+  max-width: 640px;
+  margin: 24px 0 0;
+  color: #45534a;
+  font-size: clamp(1.06rem, 2vw, 1.28rem);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 800;
+  border: 1px solid transparent;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button.primary {
+  background: var(--deep);
+  color: var(--white);
+  box-shadow: 0 14px 36px rgba(33, 63, 54, 0.24);
+}
+
+.button.secondary {
+  color: var(--deep);
+  background: rgba(255, 255, 255, 0.52);
+  border-color: var(--line);
+}
+
+.course-card {
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 24px;
+  background: rgba(255, 253, 246, 0.74);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.hero-photo {
+  min-height: 350px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  margin-bottom: 14px;
+  background: var(--deep);
+}
+
+.hero-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(15, 33, 27, 0.08), rgba(15, 33, 27, 0.42)),
+    radial-gradient(circle at 18% 18%, rgba(255, 253, 246, 0.18), transparent 24rem);
+  pointer-events: none;
+}
+
+.hero-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.92) contrast(1.04);
+}
+
+.facts {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.facts div {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 253, 246, 0.66);
+}
+
+.facts dt {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.facts dd {
+  margin: 4px 0 0;
+  color: var(--deep-2);
+  font-weight: 800;
+}
+
+.fee-main {
+  display: block;
+}
+
+.fee-note {
+  display: block;
+  width: fit-content;
+  margin-top: 6px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: rgba(185, 151, 82, 0.14);
+  color: #516056;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  font-weight: 800;
+}
+
+.section {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 86px 0;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1fr);
+  gap: clamp(28px, 6vw, 70px);
+  align-items: start;
+  border-top: 1px solid var(--line);
+}
+
+.intro p:last-child {
+  margin: 8px 0 0;
+  color: #435048;
+  font-size: 1.13rem;
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  padding-top: 24px;
+}
+
+.benefits article,
+.panel,
+.day-card,
+.teacher-card {
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 254, 249, 0.7);
+  box-shadow: 0 18px 56px rgba(20, 41, 33, 0.08);
+}
+
+.benefits article {
+  padding: 24px;
+}
+
+.benefits span {
+  color: var(--gold);
+  font-weight: 900;
+  font-size: 0.88rem;
+}
+
+.benefits h3 {
+  margin-top: 8px;
+}
+
+.benefits p,
+.teacher-card p,
+.register-copy p,
+.panel p {
+  color: #4e5b53;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  gap: 20px;
+}
+
+.panel {
+  padding: clamp(24px, 4vw, 38px);
+}
+
+.highlight {
+  color: var(--white);
+  background:
+    radial-gradient(circle at 90% 12%, rgba(220, 197, 143, 0.34), transparent 18rem),
+    linear-gradient(135deg, #1e352c, #0f211b);
+}
+
+.highlight h2,
+.highlight p,
+.highlight .section-kicker {
+  color: var(--white);
+}
+
+.highlight .section-kicker {
+  opacity: 0.78;
+}
+
+.soft-list ul,
+.day-card ol {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.soft-list li,
+.day-card li {
+  padding: 11px 0 11px 26px;
+  position: relative;
+  border-bottom: 1px solid var(--line);
+}
+
+.soft-list li::before,
+.day-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 22px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.soft-list li:last-child,
+.day-card li:last-child {
+  border-bottom: 0;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 28px;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.day-card {
+  padding: clamp(24px, 4vw, 34px);
+}
+
+.day-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.day-head span {
+  display: inline-flex;
+  width: 68px;
+  height: 68px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--white);
+  background: linear-gradient(180deg, var(--deep), #0f211b);
+  font-weight: 900;
+}
+
+.teachers {
+  padding-top: 40px;
+}
+
+.teacher-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.teacher-card {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 18px;
+  padding: 24px;
+}
+
+.teacher-initial {
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--deep);
+  background: linear-gradient(180deg, #e8d49c, #b99752);
+  font-family: "Noto Serif TC", serif;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.register {
+  display: block;
+  padding-bottom: 110px;
+}
+
+.register-copy {
+  max-width: 760px;
+  padding: 8px 0 30px;
+}
+
+.form-embed {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  background: rgba(255, 253, 246, 0.28);
+}
+
+.form-embed iframe {
+  display: block;
+  width: 100%;
+  height: 2584px;
+  border: 0;
+  background: transparent;
+}
+
+.footer {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 28px 0 42px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--muted);
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  font-weight: 800;
+  color: var(--deep);
+}
+
+@media (max-width: 860px) {
+  .hero {
+    min-height: auto;
+    padding-bottom: 48px;
+  }
+
+  .nav {
+    margin-bottom: 38px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero-grid,
+  .intro,
+  .info-grid,
+  .days,
+  .teacher-grid,
+  .register {
+    grid-template-columns: 1fr;
+  }
+
+  .course-card {
+    order: -1;
+  }
+
+  .hero-photo {
+    min-height: 300px;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 62px 0;
+  }
+
+  .register {
+    padding-bottom: 72px;
+  }
+
+  .register-copy {
+    padding-bottom: 22px;
+  }
+
+  .form-embed iframe {
+    height: 2584px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    padding-inline: 18px;
+  }
+
+  h1 {
+    font-size: 2.55rem;
+  }
+
+  .hero-actions,
+  .button {
+    width: 100%;
+  }
+
+  .facts {
+    grid-template-columns: 1fr;
+  }
+
+  .teacher-card {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
